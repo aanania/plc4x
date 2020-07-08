@@ -119,7 +119,7 @@ public class Plc4x implements Input {
                 resultMap.put("sourceName", sourceName);
                 resultMap.put("values", results);
 
-                if (logger.getLevel().equals(Level.FINEST)) {
+                //if (logger.getLevel().equals(Level.FINEST)) {
                     for (Map.Entry<String, Object> result : results.entrySet()) {
                         // Get field-name and -value from the results.
                         String fieldName = result.getKey();
@@ -127,7 +127,7 @@ public class Plc4x implements Input {
                         logger.finest("fieldName: " + fieldName);
                         logger.finest("fieldValue: " + fieldValue);
                     }
-                }
+                //}
                 consumer.accept(resultMap);
             }, triggerCollector);
             scraper.start();
